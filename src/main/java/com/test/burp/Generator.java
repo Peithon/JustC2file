@@ -1,4 +1,4 @@
-package java.com.test.burp;
+package com.test.burp;
 
 import burp.*;
 import com.test.burp.persiancat.Data;

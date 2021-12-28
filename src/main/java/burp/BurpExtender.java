@@ -1,6 +1,6 @@
-package java.burp;
+package burp;
 
-import java.com.test.burp.JustC2file;
+import com.test.burp.JustC2file;
 
 public class BurpExtender extends JustC2file {
 //@author: peithon

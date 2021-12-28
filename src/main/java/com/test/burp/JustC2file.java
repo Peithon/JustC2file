@@ -1,8 +1,9 @@
-package java.com.test.burp;
+package com.test.burp;
 
 import burp.*;
+import com.test.burp.ui.C2ui;
+
 import javax.swing.*;
-import java.com.test.burp.ui.C2ui;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;

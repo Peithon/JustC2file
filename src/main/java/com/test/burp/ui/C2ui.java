@@ -1,4 +1,4 @@
-package java.com.test.burp.ui;
+package com.test.burp.ui;
 
 import javax.swing.*;
 import java.awt.*;

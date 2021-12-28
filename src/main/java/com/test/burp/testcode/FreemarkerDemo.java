@@ -1,4 +1,4 @@
-package java.com.test.burp.testcode;
+package com.test.burp.testcode;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

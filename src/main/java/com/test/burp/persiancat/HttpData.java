@@ -1,4 +1,4 @@
-package java.com.test.burp.persiancat;
+package com.test.burp.persiancat;
 
 import java.util.HashMap;
 import java.util.List;
