@@ -27,7 +27,7 @@
   
 ### 关于code-signer
 
-   在`Attacks -> Packages -> Windows Executable和Windows Executable (S)`生成可执行文件或DLL文件时，默认是不进行签名的，如果需要对可执行文件或 DLL 文件进行签名，要在CS服务器上生成`jks`证书，步骤如下：
+   在`Attacks -> Packages -> Windows Executable和Windows Executable (S)`生成可执行文件或DLL文件时，默认是不进行签名的，如果需要对可执行文件或 DLL 文件进行签名，要在CS服务器上生成`jks`证书，然后在profile文件中配置code-signer，步骤如下：
    
  ***C2profile与keystore证书最好在相同目录下***
    
