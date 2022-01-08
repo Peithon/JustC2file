@@ -68,7 +68,7 @@ set host_stage "${host_stage}";
 
 http-stager {
     set uri_x86 "/webapi/v6/Update";
-    set uri_x64 "/webapi/v3/Update}";
+    set uri_x64 "/webapi/v3/Update";
 
     server {
         header "Content-Type" "application/octet-stream";
