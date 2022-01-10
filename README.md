@@ -23,7 +23,7 @@
   
   在浏览器查看目标站点相关的证书信息，然后填充到https-certificate中的对应的配置参数中。
  
- ![](https://github.com/Peithon/JustC2file/blob/master-tets/imgs/https-certificate.png)
+ ![](https://github.com/Peithon/JustC2file/blob/master-test/imgs/https-certificate.png)
   
 ### 关于code-signer
 
