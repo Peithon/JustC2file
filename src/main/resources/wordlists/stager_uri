@@ -1,0 +1,10 @@
+/api/v2/datafeed /api/v3/datafeed
+/webapi/v6/Update /webapi/v3/Update
+/api/v1/canopy/check-socket /api/v2/canopy/check-socket
+/api/v3/commonservice /api/v5/commonservice
+/api/customization/favicon /api/customizationer/favicons
+/api/action/play/1/u573au666f1 /api/action/play/1/u573au666f2
+/api/v2/integrations/ceibal /api/v3/integrations/ceibal
+/api/v3/abtest/analytics/48fd0ae5-5d7e-4cab-afcf-c4cc42f24855 /api/v2/abtest/analytics/48fd0ae5-5d7e-4cab-afcf-c4cc42f24855
+/api/v1/frontend/error /api/v3/frontend/error
+/api/v1/user/ticket /api/v2/user/ticket

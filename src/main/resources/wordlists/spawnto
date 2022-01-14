@@ -1,0 +1,6 @@
+%windir%\\syswow64\\eventvwr.exe	%windir%\\sysnative\\eventvwr.exe
+%windir%\\syswow64\\taskeng.exe	%windir%\\sysnative\\taskeng.exe
+%windir%\\syswow64\\spoolsv.exe	%windir%\\sysnative\\spoolsv.exe
+%windir%\\syswow64\\dllhost.exe	%windir%\\sysnative\\dllhost.exe
+%windir%\\syswow64\\gpupdate.exe	%windir%\\sysnative\\gpupdate.exe
+%windir%\\syswow64\\explorer.exe	%windir%\\sysnative\\explorer.exe
