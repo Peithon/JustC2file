@@ -125,5 +125,14 @@ keytool -v -importkeystore -srckeystore keystore.store -srcstoretype PKCS12 -des
 ```
 
 
+## 参考文献
+
+[CS官方文档](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_main.htm?cshid=1062)
+
+[Randomized Malleable C2 Profiles Made Easy](https://bluescreenofjeff.com/2017-08-30-randomized-malleable-c2-profiles-made-easy/)
+
+[How to Write Malleable C2 Profiles for Cobalt Strike](https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/)
+
+[threatexpress/malleable-c2](https://github.com/threatexpress/malleable-c2)
 
 
