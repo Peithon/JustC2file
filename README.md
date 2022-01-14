@@ -23,7 +23,7 @@ chrome在无痕模式下默认不开启扩展程序，如果没有开启的话�
 
 ### 2、Burp中选中相关流量
 
-回到Burp中，将想用的流量右键高亮显示，找到足够多的流量时同时选中，右键生存CS的配置文件
+回到Burp中，将想用的流量右键高亮显示，找到足够多的流量时同时选中，右键生成CS的配置文件
 
 ![](https://github.com/Peithon/JustC2file/blob/master/imgs/check_http.png)
 
