@@ -7,6 +7,8 @@
 
 在Burp中安装插件之后，同时选中目标站点至少三条GET/POST请求，且必须同时存在GET/POST；将通过这三个请求响应的数据包生成profile文件，然后复制文本到Cobalt Strike服务器上，使用c2lint进行检测，通过之后可使用该文件启动CS，以达到规避流量检测的效果；测试可以执行命令再用于实际环境中。
 
+![](https://github.com/Peithon/JustC2file/blob/master/imgs/text-bing.png)
+
 ## 演示
 
 ### 1、浏览器无痕页面产生流量
@@ -56,7 +58,7 @@ chrome在无痕模式下默认不开启扩展程序，如果没有开启的话�
 ```
 ### 4、使用生成的文件在服务上启动CS
 
-然后在CS服务器上，使用命令
+在服务器使用c2lint测试文件，没有错误后启动CS，使用命令
 
 ```
 nohup ./teamserver [external IP] [password] [/path/to/my.profile] &
