@@ -13,13 +13,8 @@
 
 ### 1、浏览器无痕页面产生流量
 
-在浏览器中开启无痕模式（防止存在个人信息），然后开启代理，在无痕模式下产生流量，比如这里随便搜索一下：
+在浏览器中开启无痕模式（防止存在个人信息），然后开启代理，在无痕模式下产生流量；chrome在无痕模式下默认不开启扩展程序，如果没有开启的话：点击右上角菜单图标【三个点】，依次选择【更多工具】-【扩展程序】- 详情，开启。
 
-![](https://github.com/Peithon/JustC2file/blob/master/imgs/bing_select.png)
-
-chrome在无痕模式下默认不开启扩展程序，如果没有开启的话：点击右上角菜单图标【三个点】，依次选择【更多工具】-【扩展程序】- 详情，开启
-
-![](https://github.com/Peithon/JustC2file/blob/master/imgs/proxy_burp.png)
 
 ### 2、Burp中选中相关流量
 
@@ -89,7 +84,6 @@ nohup ./teamserver [external IP] [password] [/path/to/my.profile] &
 
 在浏览器查看目标站点相关的证书信息，然后填充到https-certificate中的对应的配置参数中。
 
-![](https://github.com/Peithon/JustC2file/blob/master-test/imgs/https-certificate.png)
 
 ### 关于code-signer
 
