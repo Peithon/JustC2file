@@ -66,7 +66,7 @@ nohup ./teamserver [external IP] [password] [/path/to/my.profile] &
 
 ![](https://github.com/Peithon/JustC2file/blob/master/imgs/http-get.jpg)
 
-![](https://github.com/Peithon/JustC2file/blob/master/imgs/http-post.jpg)
+![](https://github.com/Peithon/JustC2file/blob/master/imgs/http-post.png)
 
 ## 启动CS前的注意事项
 ### 关于https-certificate
