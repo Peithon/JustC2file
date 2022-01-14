@@ -7,6 +7,8 @@
 
 在Burp中安装插件之后，同时选中目标站点至少三条GET/POST请求，且必须同时存在GET/POST；将通过这三个请求响应的数据包生成profile文件，然后复制文本到Cobalt Strike服务器上，使用c2lint进行检测，通过之后可使用该文件启动CS，以达到规避流量检测的效果；测试可以执行命令再用于实际环境中。
 
+![](https://github.com/Peithon/JustC2file/blob/master/imgs/text-bing.png)
+
 ## 演示
 
 ### 1、浏览器无痕页面产生流量
@@ -21,7 +23,7 @@ chrome在无痕模式下默认不开启扩展程序，如果没有开启的话�
 
 ### 2、Burp中选中相关流量
 
-回到Burp中，将想用的流量右键高亮显示，找到足够多的流量时同时选中，右键生存CS的配置文件
+回到Burp中，将想用的流量右键高亮显示，找到足够多的流量时同时选中，右键生成CS的配置文件
 
 ![](https://github.com/Peithon/JustC2file/blob/master/imgs/check_http.png)
 
@@ -56,7 +58,7 @@ chrome在无痕模式下默认不开启扩展程序，如果没有开启的话�
 ```
 ### 4、使用生成的文件在服务上启动CS
 
-然后在CS服务器上，使用命令
+在服务器使用c2lint测试文件，没有错误后启动CS，使用命令
 
 ```
 nohup ./teamserver [external IP] [password] [/path/to/my.profile] &
@@ -123,5 +125,14 @@ keytool -v -importkeystore -srckeystore keystore.store -srcstoretype PKCS12 -des
 ```
 
 
+## 参考文献
+
+[CS官方文档](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_main.htm?cshid=1062)
+
+[Randomized Malleable C2 Profiles Made Easy](https://bluescreenofjeff.com/2017-08-30-randomized-malleable-c2-profiles-made-easy/)
+
+[How to Write Malleable C2 Profiles for Cobalt Strike](https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/)
+
+[threatexpress/malleable-c2](https://github.com/threatexpress/malleable-c2)
 
 
