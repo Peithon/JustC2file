@@ -7,24 +7,27 @@ import javax.swing.*;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @program: JustC2file
+ * @author: Peithon
+ * @create: 2022-01-08 09:09
+ **/
 public class JustC2file implements IBurpExtender, IContextMenuFactory
 {
     private static final String name = "JustC2file";
-    private PrintWriter stdout;
-    private IExtensionHelpers helpers;
-    private PrintWriter stderr;
+    private IBurpExtenderCallbacks callbacks;
+
     @Override
     public void registerExtenderCallbacks(IBurpExtenderCallbacks callbacks)
     {
-        stdout = new PrintWriter(callbacks.getStdout(), true);
-        stderr = new PrintWriter(callbacks.getStderr(), true);
-        this.helpers = callbacks.getHelpers();
+        PrintWriter stdout = new PrintWriter(callbacks.getStdout(), true);
+        PrintWriter stderr = new PrintWriter(callbacks.getStderr(), true);
+        this.callbacks = callbacks;
         callbacks.setExtensionName(name);
         stdout.println("[INFO] ------------------------------------------------------------------------\n" +
                 "[INFO] C2 profile generator\n" +
                 "[INFO] ------------------------------------------------------------------------\n" +
-                "[INFO] 用法: 同时选中一个Get请求和一个Post请求，然后右键点击该插件。\n" +
+                "[INFO] 用法: 同时选中至少三个请求(GET/POST)，且必须GET和POST同时存在，然后右键点击该插件。\n" +
                 "[INFO] 提示: 想要隐蔽性好的话，Get请求可以选择JQuery;\n" +
                 "[INFO] ------------------------------------------------------------------------\n");
         stderr.println("no errors");
@@ -47,34 +50,7 @@ public class JustC2file implements IBurpExtender, IContextMenuFactory
             C2ui frame = new C2ui();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
-            frame.setFile(new Generator(invocation,this.helpers).getExampleFile());
-//            Map<String, Object> dataMap = new HashMap<String, Object>();
-//            new Data(dataMap).putData();
-//            // getSelectedMessages()函数用于获取当前显示的或用户选中的HTTP请求/响应的细节
-//            // analyzeRequest()函数用于分析HTTP请求信息以便获取到多个键的值
-//            IHttpRequestResponse[] messages = invocation.getSelectedMessages();
-//            HttpData idata = new HttpData(dataMap);
-//            for (IHttpRequestResponse message : messages) {
-//                byte[] req = message.getRequest();
-//                IRequestInfo analyzedRequest = helpers.analyzeRequest(req);
-//                String method = analyzedRequest.getMethod();
-//                /*****************获取header**********************/
-//                List<String> headers = analyzedRequest.getHeaders();
-//                //处理响应包 getResponse获得的是字节序列
-//                IResponseInfo analyzeResponse = helpers.analyzeResponse(message.getResponse());
-//                List<String> iheaders = analyzeResponse.getHeaders();
-//                // 循环获取参数，判断类型，进行加密处理后，再构造新的参数，合并到新的请求包中。
-//                if (method.equals("POST")) {
-//                    System.out.println("hello POST");
-//                    idata.putPostRequestHeaders(headers);
-//                    idata.putPostResponseHeaders(iheaders);
-//                } else if (method.equals("GET")) {
-//                    System.out.println("hello GET");
-//                    idata.putGetRequestHeaders(headers);
-//                    idata.putGetResponseHeaders(iheaders);
-//                }
-//
-//            }
+            frame.setFile(new Generator(invocation,this.callbacks).getProfile());
         });
         return listMenuItems;
     }

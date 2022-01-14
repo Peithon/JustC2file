@@ -4,7 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-
+/**
+ * @program: JustC2file
+ * @author: Peithon
+ * @create: 2022-01-08 09:09
+ **/
 public class C2ui extends JFrame{
     private JTextArea resArea;
     private JButton button;
