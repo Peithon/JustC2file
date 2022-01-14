@@ -117,7 +117,18 @@ keytool -v -importkeystore -srckeystore keystore.store -srcstoretype PKCS12 -des
 #    set alias "google";
 #}
 ```
+## 更新日志
 
+- 2022-01-14 更新第一个正式版本
+  - 将测试版本的代码重构
+    - 采用mvc模式重新构建代码
+    - 支持cs4.2
+  - 支持`http-stager`通过流量获取
+  - 新增`prepend`、`append`通过流量自动生成
+  - 支持`post-ex`模块随机生成
+  - 新增`process-inject`定义
+ 
+- 2021-12-28 第一个测试版本，支持`http-get`、`http-post`通过选取的流量生成，其他的都是随机产生。
 
 ## 参考文献
 
