@@ -13,13 +13,8 @@
 
 ### 1、浏览器无痕页面产生流量
 
-在浏览器中开启无痕模式（防止存在个人信息），然后开启代理，在无痕模式下产生流量，比如这里随便搜索一下：
+在浏览器中开启无痕模式（防止存在个人信息），然后开启代理，在无痕模式下产生流量；chrome在无痕模式下默认不开启扩展程序，如果没有开启的话：点击右上角菜单图标【三个点】，依次选择【更多工具】-【扩展程序】- 详情，开启。
 
-![](https://github.com/Peithon/JustC2file/blob/master/imgs/bing_select.png)
-
-chrome在无痕模式下默认不开启扩展程序，如果没有开启的话：点击右上角菜单图标【三个点】，依次选择【更多工具】-【扩展程序】- 详情，开启
-
-![](https://github.com/Peithon/JustC2file/blob/master/imgs/proxy_burp.png)
 
 ### 2、Burp中选中相关流量
 
@@ -56,7 +51,7 @@ chrome在无痕模式下默认不开启扩展程序，如果没有开启的话�
 #    set alias "google";
 #}
 ```
-### 4、使用生成的文件在服务上启动CS
+### 4、使用生成的文件在服务器上启动CS
 
 在服务器使用c2lint测试文件，没有错误后启动CS，使用命令
 
@@ -89,7 +84,6 @@ nohup ./teamserver [external IP] [password] [/path/to/my.profile] &
 
 在浏览器查看目标站点相关的证书信息，然后填充到https-certificate中的对应的配置参数中。
 
-![](https://github.com/Peithon/JustC2file/blob/master-test/imgs/https-certificate.png)
 
 ### 关于code-signer
 
@@ -123,7 +117,18 @@ keytool -v -importkeystore -srckeystore keystore.store -srcstoretype PKCS12 -des
 #    set alias "google";
 #}
 ```
+## 更新日志
 
+- 2022-01-14 更新第一个正式版本
+  - 将测试版本的代码重构
+    - 采用mvc模式重新构建代码
+    - 支持cs4.2
+  - 支持`http-stager`通过流量获取
+  - 新增`prepend`、`append`通过流量自动生成
+  - 支持`post-ex`模块随机生成
+  - 新增`process-inject`定义
+ 
+- 2021-12-28 第一个测试版本，支持`http-get`、`http-post`通过选取的流量生成，其他的都是随机产生。
 
 ## 参考文献
 
