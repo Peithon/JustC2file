@@ -118,6 +118,8 @@ keytool -v -importkeystore -srckeystore keystore.store -srcstoretype PKCS12 -des
 #}
 ```
 ## 更新日志
+- 2022-01-15 第一个正式版本补充
+  - 添加支持cs4.4版本 
 
 - 2022-01-14 更新第一个正式版本
   - 将测试版本的代码重构
