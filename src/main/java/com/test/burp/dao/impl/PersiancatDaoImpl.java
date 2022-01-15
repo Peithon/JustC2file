@@ -92,8 +92,8 @@ public class PersiancatDaoImpl implements PersiancatDao {
 
     public String lookHost_stage(){
         /*传输数据、Exp时，内容建议分段传输，和运输投资类似，分批的安全性比一次的更高。
-          true表示进行分段传输，false表示不进行分段传输，这里默认配置为false
+          true表示进行分段传输，false表示不进行分段传输，这里默认配置为true
          */
-        return "false";
+        return "true";
     }
 }

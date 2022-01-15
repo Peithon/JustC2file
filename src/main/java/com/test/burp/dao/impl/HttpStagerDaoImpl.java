@@ -60,8 +60,8 @@ public class HttpStagerDaoImpl implements HttpStagerDao {
                 httpStager.setUri_x86(stager_uri.split("\\s+")[0]);
                 httpStager.setUri_x64(stager_uri.split("\\s+")[1]);
             }else {
-                httpStager.setUri_x86("/rp"+lookUri(headers));
-                httpStager.setUri_x64("/s"+lookUri(headers));
+                httpStager.setUri_x86(lookUri(headers));
+                httpStager.setUri_x64("/_"+lookUri(headers));
             }
 
         } catch (IOException e) {

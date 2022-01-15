@@ -39,19 +39,29 @@ public class JustC2file implements IBurpExtender, IContextMenuFactory
     public List<JMenuItem> createMenuItems(final IContextMenuInvocation invocation) {
         List<JMenuItem> listMenuItems = new ArrayList<JMenuItem>();
         //子菜单
-        JMenuItem menuItem = new JMenuItem("Generate C2 profile");
+        JMenuItem menuItem42 = new JMenuItem("CobaltStrike 4.2");
+        JMenuItem menuItem44 = new JMenuItem("CobaltStrike 4.4");
         //父级菜单
-        //JMenu jMenu = new JMenu("Generate C2 profile");
-        //jMenu.add(menuItem);
-        listMenuItems.add(menuItem);
-
-        menuItem.addActionListener(e -> {
+        JMenu jMenu = new JMenu("Generate C2 profile");
+        jMenu.add(menuItem42);
+        jMenu.add(menuItem44);
+        listMenuItems.add(jMenu);
+        menuItem42.addActionListener(e -> {
            //  生成C2 profile的GUI框
             C2ui frame = new C2ui();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
-            frame.setFile(new Generator(invocation,this.callbacks).getProfile());
+            frame.setFile(new Generator(invocation,this.callbacks).getProfile("CobaltStrike_4_2"));
         });
+
+        menuItem44.addActionListener(e -> {
+            //  生成C2 profile的GUI框
+            C2ui frame = new C2ui();
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+            frame.setFile(new Generator(invocation,this.callbacks).getProfile("CobaltStrike_4_4"));
+        });
+
         return listMenuItems;
     }
 

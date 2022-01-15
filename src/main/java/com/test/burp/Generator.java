@@ -36,7 +36,7 @@ public class Generator {
         this.callbacks = callbacks;
     }
 
-    public String getProfile(){
+    public String getProfile(String TEMPLATE_VERSION){
         Map<String, Object> dataMap = new HashMap<String, Object>();
         // getSelectedMessages()函数用于获取当前显示的或用户选中的HTTP请求/响应的细节
         // analyzeRequest()函数用于分析HTTP请求信息以便获取到多个键的值
@@ -63,10 +63,13 @@ public class Generator {
         dataMap.putAll(httpGetBeaconService.putdataHttpGetBeacon());
         dataMap.putAll(httpPostBeaconService.putdataHttpPostBeacon());
         dataMap.putAll(dnsBeaconService.putdataDnsBeacon());
-        return getExampleFile(dataMap);
+        if(TEMPLATE_VERSION.equals("CobaltStrike_4_4")){
+            return getExampleFile(dataMap,"c2profile_template4.4.ftl");
+        }
+        return getExampleFile(dataMap,"c2profile_template4.2.ftl");
     }
 
-    public String getExampleFile(Map<String, Object> dataMap){
+    public String getExampleFile(Map<String, Object> dataMap,String TEMPLATE_FILENAME){
         try {
             // step1 创建freeMarker配置实例
             Configuration cfg = new Configuration();
@@ -75,7 +78,7 @@ public class Generator {
             // step3 创建数据模型
             //Map<String, Object> dataMap = new HashMap<String, Object>();
             // step4 加载模版文件
-            Template template = cfg.getTemplate("c2profile_template4.2.ftl");
+            Template template = cfg.getTemplate(TEMPLATE_FILENAME);
             // step5 生成数据
             StringWriter strWriter = new StringWriter();
             template.process(dataMap, strWriter);

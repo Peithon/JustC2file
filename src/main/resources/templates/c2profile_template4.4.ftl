@@ -1,5 +1,5 @@
 ## Cobalt Strike Malleable C2 Profile
-## Version: Cobalt Strike 4.2
+## Version: Cobalt Strike 4.4
 ## Date   : ${timestamp}
 
 ## Profile Name
@@ -33,12 +33,27 @@ set pipename_stager  "mojo.5688.8052.35780273329370473##";
 set smb_frame_header "\x80";
 
 ## DNS beacons
-set maxdns          "${maxdns}";
-set dns_max_txt     "${dns_max_txt}";
-set dns_idle        "${dns_idle}";
-set dns_sleep       "${dns_sleep}";
-set dns_stager_prepend "${dns_stager_prepend}";
-set dns_stager_subhost "${dns_stager_subhost}";
+dns-beacon {
+    # Options moved into "dns-beacon" group in version 4.3
+    set maxdns          "${maxdns}";
+    set dns_max_txt     "${dns_max_txt}";
+    set dns_idle        "${dns_idle}";
+    set dns_sleep       "${dns_sleep}";
+    set dns_stager_prepend "${dns_stager_prepend}";
+    set dns_stager_subhost "${dns_stager_subhost}";
+    set dns_ttl            "5";
+
+    # DNS subhosts override options, added in version 4.3
+    set beacon           "a.bc.";
+    set get_A            "b.1a.";
+    set get_AAAA         "c.4a.";
+    set get_TXT          "d.tx.";
+    set put_metadata     "e.md.";
+    set put_output       "f.po.";
+    set ns_response      "zero";
+
+}
+
 
 ## SSH beacons
 set ssh_banner        "OpenSSH_7.4 Debian (protocol 2.0)";
@@ -165,6 +180,7 @@ http-config {
     header "Connection" "Keep-Alive";
     # Use this option if your teamserver is behind a redirector
     set trust_x_forwarded_for "true";
+    set block_useragents "curl*,lynx*,wget*";
 }
 
 ## HTTP GET
